@@ -57,13 +57,13 @@ let quotes = [
 ***/
 /* This function randomly creates a number and uses that number
 to retrieve objects from the array of objects.*/
-// function getRandomQuote(array) {
-//   let randomNumber = Math.floor(Math.random() * array.length);
-//   for (let i = 0; i < array.length; i++) {
-//     let randomQuote = array[randomNumber]
-//     return randomQuote;
-//   }
-// }
+function getRandomQuote(array) {
+  let randomNumber = Math.floor(Math.random() * array.length);
+  for (let i = 0; i < array.length; i++) {
+    let randomQuote = array[randomNumber]
+    return randomQuote;
+  }
+}
 
 // function getRandomColor () {
 //   let red = Math.floor(Math.random() * 256);
