@@ -57,22 +57,22 @@ let quotes = [
 ***/
 /* This function randomly creates a number and uses that number
 to retrieve objects from the array of objects.*/
-function getRandomQuote(array) {
-  let randomNumber = Math.floor(Math.random() * array.length);
-  for (let i = 0; i < array.length; i++) {
-    let randomQuote = array[randomNumber]
-    return randomQuote;
-  }
-}
+// function getRandomQuote(array) {
+//   let randomNumber = Math.floor(Math.random() * array.length);
+//   for (let i = 0; i < array.length; i++) {
+//     let randomQuote = array[randomNumber]
+//     return randomQuote;
+//   }
+// }
 
-function getRandomColor () {
-  let red = Math.floor(Math.random() * 256);
-  let green = Math.floor(Math.random() * 256);
-  let blue = Math.floor(Math.random() * 256);
-  let rgbColor = `rbg(${red}, ${green}, ${blue})`
-  document.body.style.backgroundColor = rgbColor;
-  return rgbColor;
-}
+// function getRandomColor () {
+//   let red = Math.floor(Math.random() * 256);
+//   let green = Math.floor(Math.random() * 256);
+//   let blue = Math.floor(Math.random() * 256);
+//   let rgbColor = `rbg(${red}, ${green}, ${blue})`
+//   document.body.style.backgroundColor = rgbColor;
+//   return rgbColor;
+// }
 
 // function setTimer() {
 //   let timer = setInterval(printQuote, 10000);
@@ -81,28 +81,28 @@ function getRandomColor () {
  * `printQuote` function
 ***/
 
-function printQuote() {
-  let randomQuote = getRandomQuote(quotes);
-  let html = ``;
-  html += `<p class="quotes">${randomQuote.quote}</p>`
-  html += `<p class="source">${randomQuote.source}`
-
-  if ('citation' in randomQuote) {
-    html += `<span class="citation">${randomQuote.citation}</span>`
-  }
-
-  if ('year' in randomQuote ){
-    html += `<span class="year">${randomQuote.year}</span>`
-  }
-  if ('tag' in randomQuote ){
-    html += `<span class="year">${randomQuote.tag}</span></p>`
-  }
-  document.getElementById('quote-box').innerHTML = html;
-  return html;
-}
+// function printQuote() {
+//   let randomQuote = getRandomQuote(quotes);
+//   let html = ``;
+//   html += `<p class="quotes">${randomQuote.quote}</p>`
+//   html += `<p class="source">${randomQuote.source}`
+//
+//   if ('citation' in randomQuote) {
+//     html += `<span class="citation">${randomQuote.citation}</span>`
+//   }
+//
+//   if ('year' in randomQuote ){
+//     html += `<span class="year">${randomQuote.year}</span>`
+//   }
+//   if ('tag' in randomQuote ){
+//     html += `<span class="year">${randomQuote.tag}</span></p>`
+//   }
+//   document.getElementById('quote-box').innerHTML = html;
+//   return html;
+// }
 // console.log(printQuote());
-printQuote();
-getRandomColor();
+// printQuote();
+// getRandomColor();
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
