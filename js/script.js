@@ -74,9 +74,9 @@ function getRandomColor () {
   return rgbColor;
 }
 
-// function setTimer() {
-//   let timer = setInterval(printQuote, 10000);
-// }
+function setTimer() {
+  let timer = setInterval(printQuote, 10000);
+}
 /***
  * `printQuote` function
 ***/
@@ -98,6 +98,8 @@ function printQuote() {
     html += `<span class="year">${randomQuote.tag}</span></p>`
   }
   document.getElementById('quote-box').innerHTML = html;
+
+  setTimer();
   return html;
 }
 // console.log(printQuote());
