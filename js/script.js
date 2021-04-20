@@ -24,21 +24,21 @@ let quotes = [
     source: 'Dr. Martin Luther King Jr.',
     citation: 'Sermon: Loving Your Enemies',
     year: 1957,
-    tag: `Religious`
+    tag: `#Religious`
   },
   {
     quote: 'My fellow Americans: ask not what your country can do for you—ask what you can do for your country.',
     source: 'John F. Kennedy',
     citation: 'Speach: Inaugural Address',
     year: 1961,
-    tag: `Politics`
+    tag: `#Political`
   },
   {
     quote: 'A house divided against itself cannot stand.',
     source: 'Abraham Lincoln',
     citation: 'Speech: House Divided',
     year: 1858,
-    tag: `Politics`
+    tag: `#Political`
   },
   {
     quote: "Life is what happens when you're busy making other plans.",
@@ -65,14 +65,14 @@ function getRandomQuote(array) {
   }
 }
 
-// function getRandomColor () {
-//   let red = Math.floor(Math.random() * 256);
-//   let green = Math.floor(Math.random() * 256);
-//   let blue = Math.floor(Math.random() * 256);
-//   let rgbColor = `rbg(${red}, ${green}, ${blue})`
-//   document.body.style.backgroundColor = rgbColor;
-//   return rgbColor;
-// }
+function getRandomColor () {
+  let red = Math.floor(Math.random() * 256);
+  let green = Math.floor(Math.random() * 256);
+  let blue = Math.floor(Math.random() * 256);
+  let rgbColor = `rbg(${red}, ${green}, ${blue})`
+  document.body.style.backgroundColor = rgbColor;
+  return rgbColor;
+}
 
 // function setTimer() {
 //   let timer = setInterval(printQuote, 10000);
