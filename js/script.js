@@ -16,29 +16,29 @@ let quotes = [
   {
     quote: 'Love your Enemies, for they tell you your Faults.',
     source: 'Benjamin Franklin',
-    citation: "Book: Poor Richard's Almanac",
+    citation: "Poor Richard's Almanac",
     year: 1756
   },
   {
     quote: 'Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.',
     source: 'Dr. Martin Luther King Jr.',
-    citation: 'Sermon: Loving Your Enemies',
+    citation: 'Loving Your Enemies',
     year: 1957,
     tag: `#Religious`
   },
   {
-    quote: 'My fellow Americans: ask not what your country can do for you—ask what you can do for your country.',
-    source: 'John F. Kennedy',
-    citation: 'Speach: Inaugural Address',
-    year: 1961,
-    tag: `#Political`
+    quote: 'Just keep swimming.',
+    source: 'Dory',
+    citation: 'Finding Nemo',
+    year: 2003,
+    tag: `#Entertainment`
   },
   {
-    quote: 'A house divided against itself cannot stand.',
-    source: 'Abraham Lincoln',
-    citation: 'Speech: House Divided',
-    year: 1858,
-    tag: `#Political`
+    quote: 'Why so serious?',
+    source: 'Joker',
+    citation: 'The Dark Knight',
+    year: 2008,
+    tag: `#Entertainment`
   },
   {
     quote: "Life is what happens when you're busy making other plans.",
@@ -48,7 +48,8 @@ let quotes = [
     quote: 'Do it.',
     source: 'Senator Palpatine',
     citation: 'Star Wars: Episode III',
-    year: 2005
+    year: 2005,
+    tag: '#Entertainment'
    }
 ];
 
@@ -56,7 +57,8 @@ let quotes = [
  * `getRandomQuote` function
 ***/
 /* This function randomly creates a number and uses that number
-to retrieve objects from the array of objects.*/
+to return a random object from the quotes array.*/
+
 function getRandomQuote(array) {
   let randomNumber = Math.floor(Math.random() * array.length);
   for (let i = 0; i < array.length; i++) {
@@ -69,7 +71,7 @@ function getRandomColor () {
   let red = Math.floor(Math.random() * 256);
   let green = Math.floor(Math.random() * 256);
   let blue = Math.floor(Math.random() * 256);
-  let rgbColor = `rbg(${red}, ${green}, ${blue})`
+  let rgbColor = `rgb(${red}, ${green}, ${blue})`
   document.body.style.backgroundColor = rgbColor;
   return rgbColor;
 }
@@ -82,29 +84,34 @@ function setTimer() {
 ***/
 
 function printQuote() {
-  let randomQuote = getRandomQuote(quotes);
-  let html = ``;
-  html += `<p class="quotes">${randomQuote.quote}</p>`
-  html += `<p class="source">${randomQuote.source}`
+  let currentQuote = getRandomQuote(quotes);
+  let html = `<p class="quote">${currentQuote.quote}</p>`;
+  html += `<p class="source">${currentQuote.source}`;
 
-  if ('citation' in randomQuote) {
-    html += `<span class="citation">${randomQuote.citation}</span>`
+  if ('citation' in currentQuote) {
+    html += `<span class="citation">${currentQuote.citation}</span>`;
   }
 
-  if ('year' in randomQuote ){
-    html += `<span class="year">${randomQuote.year}</span>`
+  if ('year' in currentQuote ){
+    html += `<span class="year">${currentQuote.year}</span>`;
   }
-  if ('tag' in randomQuote ){
-    html += `<span class="year">${randomQuote.tag}</span></p>`
+  if ('tag' in currentQuote ){
+    html += `<span class="year">${currentQuote.tag}</span> </p>`;
   }
+
+  // html += `</p>`
+
+
   document.getElementById('quote-box').innerHTML = html;
+  document.getElementById('load-quote').style.backgroundColor = getRandomColor();
 
-  setTimer();
+  getRandomColor();
   return html;
 }
-// console.log(printQuote());
+
 printQuote();
-// getRandomColor();
+setTimer();
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
