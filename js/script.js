@@ -56,8 +56,10 @@ let quotes = [
 /***
  * `getRandomQuote` function
 ***/
-/* This function randomly creates a number and uses that number
-to return a random object from the quotes array.*/
+/***
+ * Randomly creates a number and uses that number
+ * to return a random object from the quotes array.
+ ***/
 
 function getRandomQuote(array) {
   let randomNumber = Math.floor(Math.random() * array.length);
@@ -66,7 +68,13 @@ function getRandomQuote(array) {
     return randomQuote;
   }
 }
-
+/***
+ * Randomly creates a number from 0 to 255
+ * and assigns that number to each variable. All three variables are
+ * combined into one variable to create a random RGB color.
+ * I wasnt sure on how to change the background so I had to look it up on google.
+ * Here is the link: https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
+ ***/
 function getRandomColor () {
   let red = Math.floor(Math.random() * 256);
   let green = Math.floor(Math.random() * 256);
@@ -76,13 +84,18 @@ function getRandomColor () {
   return rgbColor;
 }
 
-function setTimer() {
-  let timer = setInterval(printQuote, 10000);
-}
 /***
  * `printQuote` function
 ***/
 
+/***
+ * Calls the getRandomQuote function.
+ * Creates an HMTL string which displays all of the object's info a certain way.
+ * Contains if statmets which determine if the objects contain
+ * 'citations', 'year', or 'tag' parameters in them.
+ * Changes background color of 'body'.
+ * Changes background color of 'load-quote' which is the button.
+ ***/
 function printQuote() {
   let currentQuote = getRandomQuote(quotes);
   let html = `<p class="quote">${currentQuote.quote}</p>`;
@@ -99,17 +112,22 @@ function printQuote() {
     html += `<span class="year">${currentQuote.tag}</span> </p>`;
   }
 
-  // html += `</p>`
-
-
   document.getElementById('quote-box').innerHTML = html;
   document.getElementById('load-quote').style.backgroundColor = getRandomColor();
-
-  getRandomColor();
+  document.querySelector('body').style.backgroundColor = getRandomColor();
   return html;
 }
 
 printQuote();
+
+/***
+ * Uses the setInterval method which allows the
+ * function printQuote() to run every 10 seconds
+ ***/
+ function setTimer() {
+   let timer = setInterval(printQuote, 10000);
+ }
+
 setTimer();
 
 /***
