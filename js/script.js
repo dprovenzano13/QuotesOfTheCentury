@@ -3,6 +3,8 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
+//Please read README file before reviewing thanks!
+
 // This is an array of objects containing all of my quotes and information about them.
 let quotes = [
   {
