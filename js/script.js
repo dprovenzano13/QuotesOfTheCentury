@@ -54,10 +54,8 @@ let quotes = [
 
 function getRandomQuote(array) {
   let randomNumber = Math.floor(Math.random() * array.length);
-  for (let i = 0; i < array.length; i++) {
     let randomQuote = array[randomNumber]
     return randomQuote;
-  }
 }
 /***
  * Randomly creates a number from 0 to 255
@@ -102,7 +100,6 @@ function printQuote() {
   document.getElementById('quote-box').innerHTML = html;
   document.getElementById('load-quote').style.backgroundColor = getRandomColor();
   document.querySelector('body').style.backgroundColor = getRandomColor();
-  return html;
 }
 
 printQuote();
